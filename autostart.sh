@@ -5,7 +5,7 @@ waybar &
 
 # set wallpaper background
 #hyprpaper &
-swaybg -i $HOME/.config/hypr/assets/wallpaper.png
+swaybg -i $HOME/.config/hypr/assets/wallpaper.png &
 
 # networks
 wifi off &
