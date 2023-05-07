@@ -15,8 +15,8 @@ bluetooth off &
 brightnessctl -d 'intel_backlight' set 20% &
 
 # for share screen
-#pipewire &
-#wireplumber &
-#/usr/lib/xdg-desktop-portal-gtk &
-#/usr/lib/xdg-desktop-portal-hyprland &
-#dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+pipewire &
+wireplumber &
+/usr/lib/xdg-desktop-portal-gtk &
+/usr/lib/xdg-desktop-portal-hyprland &
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
