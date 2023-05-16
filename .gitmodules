@@ -1,0 +1,3 @@
+[submodule "scripts/hyprland_window_switcher"]
+	path = scripts/hyprland_window_switcher
+	url = https://github.com/irdaislakhuafa/hyprland_window_switcher.git
