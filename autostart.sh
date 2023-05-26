@@ -8,7 +8,7 @@ waybar &
 swaybg -i $HOME/.config/hypr/assets/wallpaper.png &
 
 # networks
-wifi off &
+# wifi off &
 bluetooth off &
 
 # screen brightness
