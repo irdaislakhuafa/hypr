@@ -1,4 +1,6 @@
 #!/usr/bin/sh
+source ~/.config/hypr/scripts/env.sh
+
 alphabet=({a..z})
 part=""
 ignores=(
@@ -31,5 +33,13 @@ for ((a = 0; a <= 25; a++)); do
 	if [ $skip -lt 1 ]; then
 		udisksctl power-off -b /dev/sd$part
 	fi
-	echo "success unmounting with device \"${ignores[@]}\" ignored"
+	success_msg="Success unmounting with device {${ignores[@]}} ignored"
+	echo "$success_msg"
+	notify-send \
+		--app-name="$UNMOUNT_APP_NAME" \
+		--expire-time="$NOTIFICATION_EXPIRE_TIME_IN_MILISEC" \
+		--urgency=normal \
+		--wait \
+		"$success_msg"
+
 done
