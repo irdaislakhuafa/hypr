@@ -2,7 +2,7 @@
 alphabet=({a..z})
 part=""
 ignores=(
-	sda{1..10}
+	sda{0..10}
 )
 for ((a = 0; a <= 25; a++)); do
 	if [ "$(ls /dev | grep sd${alphabet[a]})" == '' ]; then
@@ -19,15 +19,17 @@ for ((a = 0; a <= 25; a++)); do
 
 		current="sd$part$b"
 		
-		if ! [ "$(echo ${ignores[@]} | grep '$dev')" == '' ]; then
-			if [ "$dev" == "$current" ]; then
+		if [ "$dev" != "" ] && [ "$(echo ${ignores[@]} | grep $dev)" == '' ]; then
+			if [ "$dev" = "$current" ]; then
+				echo "umounting /dev/$dev"
 				udisksctl unmount -b /dev/$dev
 			fi
 		else 
 			skip=1
 		fi
 	done
-	#if [ $skip -lt 1 ]; then
-		#udisksctl power-off -b /dev/sd$part
-	#fi
+	if [ $skip -lt 1 ]; then
+		udisksctl power-off -b /dev/sd$part
+	fi
+	echo "success unmounting with device \"${ignores[@]}\" ignored"
 done
