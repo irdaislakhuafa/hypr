@@ -6,6 +6,7 @@ waybar 2> /tmp/waybar &
 
 # set wallpaper background
 #hyprpaper &
+killall swaybg
 swaybg -i $HOME/.config/hypr/assets/wallpaper.png &
 
 # networks
