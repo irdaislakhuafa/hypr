@@ -2,7 +2,7 @@
 
 # bar
 killall waybar
-waybar 2> /tmp/waybar &
+while true; do waybar 2> /tmp/waybar; done &
 
 # set wallpaper background
 #hyprpaper &
